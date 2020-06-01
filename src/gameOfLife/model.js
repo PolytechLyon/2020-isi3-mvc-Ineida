@@ -31,6 +31,19 @@ export class Model {
           for (let j = 0; j < this.width; j++) {
             const nbAlive = this.aliveNeighbours(i, j);
             // TODO implement Game of life logic
+            switch (nbAlive) {
+              case 2:
+                this.state[i][j] = this.state[i][j];
+                break;
+              case 3:
+                this.state[i][j] = CELL_STATES.ALIVE;
+                break;
+              default:
+                if(isCellAlive(i,j)){
+                  this.state[i][j] = CELL_STATES.DEAD;
+                }
+                break;
+            }
           }
         }
 
@@ -49,6 +62,7 @@ export class Model {
 
   reset() {
     // TODO
+    this.init();
   }
 
   isCellAlive(x, y) {
@@ -63,10 +77,19 @@ export class Model {
   aliveNeighbours(x, y) {
     let number = 0;
     // TODO
+    if (this.isCellAlive(x, y - 1)) number++;
+    if (this.isCellAlive(x, y + 1)) number++;
+    if (this.isCellAlive(x + 1, y)) number++;
+    if (this.isCellAlive(x + 1, y - 1)) number++;
+    if (this.isCellAlive(x + 1, y + 1)) number++;
+    if (this.isCellAlive(x - 1, y)) number++;
+    if (this.isCellAlive(x - 1, y + 1)) number++;
+    if (this.isCellAlive(x - 1, y - 1)) number++;
     return number;
   }
 
   updated() {
     // TODO update the view
+    drawGame(this);
   }
 }

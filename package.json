@@ -1,16 +1,28 @@
 {
   "name": "isi3-mvc-pattern",
   "version": "1.0.0",
-  "description": "",
+  "description": "> Le rapport est à fournir dans ce document sous chacune des questions. \r > **Ne restez pas bloqués bêtement, demander de l'aide**\r > Ne copier pas le code de votre voisin, ça se voit.",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html"
   },
-  "dependencies": {},
+  "dependencies": {
+    "server": "^1.0.27"
+  },
   "devDependencies": {
     "@babel/core": "7.2.0",
     "parcel-bundler": "^1.6.1"
   },
-  "keywords": []
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PolytechLyon/2020-isi3-mvc-Ineida.git"
+  },
+  "author": "Ineida cardoso moreno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PolytechLyon/2020-isi3-mvc-Ineida/issues"
+  },
+  "homepage": "https://github.com/PolytechLyon/2020-isi3-mvc-Ineida#readme"
 }
